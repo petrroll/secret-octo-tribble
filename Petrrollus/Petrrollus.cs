@@ -70,6 +70,7 @@ namespace Petrrollus
 
         }
 
+#if (DEBUG == true)
         public override void OnPaint(IGraphics graphics)
         {
             DebugDrawer.DebugDrawRect(enemyInfo.GetGuessPositionHistory(10), 10, System.Drawing.Brushes.Blue, graphics);
@@ -79,13 +80,15 @@ namespace Petrrollus
             DebugDrawer.DebugDrawLine(this.Position, enemyInfo.Bearings.GetCurrent() + HeadingRadians, 20, System.Drawing.Pens.Red, graphics);
             DebugDrawer.DebugDrawLine(this.Position, MiscHelper.GetAngleBetweenPositions(Position, enemyInfo.GetGuessPositionEducated(10)) , 20, System.Drawing.Pens.Green, graphics);
         }
+#endif
     }
 
 
 
-   
 
-   
 
-    
+
+
+
+
 }
